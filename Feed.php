@@ -8,7 +8,7 @@
 
 
 // Hulp voor de feed
-class feedVariables{
+class FeedVariables{
     public $title;
     public $link;
     public $description;
@@ -29,7 +29,7 @@ class Feed{
     public function getChannel(){
 
 
-        $variables = new feedVariables();
+        $variables = new FeedVariables();
         $channel=$this->xmlDoc->getElementsByTagName('channel')->item(0);
         $variables->title = $channel->getElementsByTagName('title')
             ->item(0)->childNodes->item(0)->nodeValue;
@@ -46,7 +46,7 @@ class Feed{
         $x = $this->xmlDoc->getElementsByTagName('item');
         $feedItems = [];
         for ($i=0; $i<=2; $i++) {
-            $itemVariables = new feedVariables();
+            $itemVariables = new FeedVariables();
             $itemVariables->title = $x->item($i)->getElementsByTagName('title')
                 ->item(0)->childNodes->item(0)->nodeValue;
             $itemVariables->link = $x->item($i)->getElementsByTagName('link')

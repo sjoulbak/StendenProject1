@@ -2,11 +2,15 @@
     // Naam van de website
     $businessName = "Hogeschool Meppel";
 
-    // include feed.php (voor het verwerken van de feed)
+    // include Feed.php (voor het verwerken van de feed)
     require_once("Feed.php");
+    // include Weather.php (voor het verwerken van het weer)
+    require_once("Weather.php");
 
     // Nieuwe feed
     $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=nl_nl&topic=h&output=rss");
+    // Nieuwe weer
+    $weather = new Weather();
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +37,18 @@
         echo $val->description;
         echo "</p>";
     }
+
+    // Temperatuur en zonsopkomstt in Meppel
+    $weather->setLocation("Meppel");
+    $w = $weather->getWeather();
+    $sunrise = new DateTime();
+    $sunrise->setTimestamp($w->sys->sunrise);
+    echo "<p>";
+    echo "Graden: ".$w->main->temp." &deg; <br />";
+    echo "Zonsopkomst: ".$sunrise->format('H:i:s');
+
+    echo "</p>";
+
     ?>
 
 
