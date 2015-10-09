@@ -47,6 +47,7 @@
   <div class="container">
     <section class="top">
 
+      <div class="overlay"><h1>Hogeschool Meppel</h1></div>
     </section>
     <section class="mid">
 
