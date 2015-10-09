@@ -10,10 +10,15 @@
   // include Language.php (voor het verwerken van de urls)
   require_once("includes/Language.php");
 
-  // Nieuwe feed
-  $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=".$feed."&topic=h&output=rss");
   // Nieuwe weer
   $weather = new Weather();
+
+    // Temperatuur en zonsopkomstt in Meppel
+    $weather->setLocation("Meppel");
+    $w = $weather->getWeather();
+    $sunrise = new DateTime();
+    $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
+    $sunrise->setTimestamp($w->sys->sunrise);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,18 +43,26 @@
       <a href="?lang=en"><img src="images/en.png" /></a>
       <a href="?lang=nl"><img src="images/nl.png" /></a>
     </div>
+    <h1><?php echo $businessName; ?></h1>
     <nav>
       <ul>
-        <li><a class="navhome" href="">Home</a></li>
-        <li><a class="navhome" href="">Opleidingen</a></li>
-        <li><a class="navhome" href="">Nieuws</a></li>
-        <li><a class="navhome" href="">Contact</a></li>
+        <li><a class="navhome" href="?page=home">Home</a></li>
+        <li><a class="navhome" href="?page=educations">Opleidingen</a></li>
+        <li><a class="navhome" href="?page=news">Nieuws</a></li>
+        <li><a class="navhome" href="?page=contact">Contact</a></li>
       </ul>
     </nav>
+      <div class="temp">
+          <?php
+          echo "<p>";
+          echo "Graden: ".$w->main->temp." &deg; <br />";
+          echo "Zonsopkomst: ".$sunrise->format('H:i:s');
+          echo "</p>";
+          ?>
+      </div>
   </header>
   <div class="container">
     <section class="top">
-
     </section>
     <section class="mid">
       <img src="./images/circle.png"  height="100" width="100">
@@ -58,37 +71,48 @@
         <h4>-dasdsad</h4>
     </section>
     <section class="bottom">
-      <h1><?php echo $businessName; ?></h1>
-      <a href="?lang=en"><img src="images/en.png" /></a>
-      <a href="?lang=nl"><img src="images/nl.png" /></a>
-      <?php
-      // Feed channel laten zien
-      $channel = $feed->getChannel();
-      echo "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
-      echo "<br />";
+        <?php
+        if(isset($_GET['page'])){
 
-      // Feed items laten zien
-      foreach($feed->getItems() as $val){
-          echo "<p>";
-          echo $val->title;
-          echo "<br />";
-          echo $val->description;
-          echo "</p>";
-      }
+            switch($_GET['page']){
+                case "news":
 
-      // Temperatuur en zonsopkomstt in Meppel
-      $weather->setLocation("Meppel");
-      $w = $weather->getWeather();
-      $sunrise = new DateTime();
-      $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
-      $sunrise->setTimestamp($w->sys->sunrise);
+                    // Nieuwe feed
+                    $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=".$feed."&topic=h&output=rss");
 
-      echo "<p>";
-      echo "Graden: ".$w->main->temp." &deg; <br />";
-      echo "Zonsopkomst: ".$sunrise->format('H:i:s');
-      echo "</p>";
+                    // Feed channel laten zien
+                    $channel = $feed->getChannel();
+                    echo "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
+                    echo "<br />";
 
-      ?>
+                    // Feed items laten zien
+                    foreach($feed->getItems() as $val){
+                        echo "<p>";
+                        echo $val->title;
+                        echo "<br />";
+                        echo $val->description;
+                        echo "</p>";
+                    }
+
+
+                    break;
+                case "educations":
+                    educationsPage();
+                    break;
+                case "contact":
+                    contactPage();
+                    break;
+                default:
+                    homePage();
+                    break;
+            }
+
+        }
+
+
+
+
+        ?>
     </section>
   </div>
   <footer>
