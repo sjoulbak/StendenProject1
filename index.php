@@ -52,7 +52,6 @@
       <a href="<?php echo $langUrl; ?>lang=en"><img src="images/en.png" /></a>
       <a href="<?php echo $langUrl; ?>lang=nl"><img src="images/nl.png" /></a>
     </div>
-    <h1><?php echo $businessName; ?></h1>
     <nav>
       <ul>
         <li><a class="navhome" href="?page=home">Home</a></li>
@@ -72,6 +71,7 @@
   </header>
   <div class="container">
     <section class="top">
+      <div class="overlay"><h1>Hogeschool Meppel</h1></div>
     </section>
     <section class="mid">
       <img src="./images/circle.png"  height="100" width="100">
