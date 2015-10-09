@@ -13,4 +13,4 @@ $router->map( 'GET', '/nl/', function() {
     require __DIR__ . '../nl.txt';
 
 });
-var_dump($router->getRoutes());
+//var_dump($router->getRoutes());

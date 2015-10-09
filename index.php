@@ -44,6 +44,7 @@
     $weather->setLocation("Meppel");
     $w = $weather->getWeather();
     $sunrise = new DateTime();
+    $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
     $sunrise->setTimestamp($w->sys->sunrise);
     echo "<p>";
     echo "Graden: ".$w->main->temp." &deg; <br />";
