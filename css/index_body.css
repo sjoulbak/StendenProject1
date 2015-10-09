@@ -16,6 +16,14 @@
   height: auto;
   background: #000;
   padding: 20px;
+  color: #FFF;
+  min-height: 500px;
+}
+.bottom a{
+  color: #BBB;
+}
+.bottom a:hover{
+  color: #888;
 }
 .overlay {
   top: 0;

@@ -16,12 +16,14 @@ function homePage(){
 }
 function educationsPage(){
     $page = "<h1>Opleidingen</h1>";
-    $page .= "
+
+    if(isset($_GET['id'])){
+        switch($_GET['id']){
+            case 1:
+                $page .= "
                 <article>
                     <h3>Sportpsychologie</h3>
-                    <p>Wat je ook doet in de sport, de opleiding Sportpsychologie opent beslist je ogen voor de boeiende psychologische aspecten van sportgedrag. En dat kan erg nuttig zijn. Als je sporters coacht en je ze nog beter wilt begeleiden. Of voor jezelf, als je bijvoorbeeld aan fitness doet of hardloopt en net dat beetje extra wilt geven.
-In ieder sportmens vormen lichaam, geest en ziel ï¿½ï¿½n geheel. Om sportief succes te boeken, moeten alle drie de elementen in balans zijn. Naast de noodzakelijke lichamelijke conditie is ook de mentale gesteldheid van een sporter bepalend voor zijn welzijn en zijn prestatie. Juist daarmee houdt de sportpsychologie zich bezig. Na voltooiing van deze opleiding weet je hoe sportprestaties zijn verbonden met de menselijke psyche.
-</p>
+                    <p>Wat je ook doet in de sport, de opleiding Sportpsychologie opent beslist je ogen voor de boeiende psychologische aspecten van sportgedrag. En dat kan erg nuttig zijn. Als je sporters coacht en je ze nog beter wilt begeleiden. Of voor jezelf, als je bijvoorbeeld aan fitness doet of hardloopt en net dat beetje extra wilt geven. In ieder sportmens vormen lichaam, geest en ziel ï¿½ï¿½n geheel. Om sportief succes te boeken, moeten alle drie de elementen in balans zijn. Naast de noodzakelijke lichamelijke conditie is ook de mentale gesteldheid van een sporter bepalend voor zijn welzijn en zijn prestatie. Juist daarmee houdt de sportpsychologie zich bezig. Na voltooiing van deze opleiding weet je hoe sportprestaties zijn verbonden met de menselijke psyche.</p>
                     <p>
                         De opleiding Sportpsychologie is een thuisstudie en bestaat uit tien modules. Het lesmateriaal bestaat uit veel praktische oefeningen, onderzoek en informatie uit casestudies. Voor de opleiding Sportpsychologie is geen speciale vooropleiding nodig. Je krijgt een volledig overzicht van de huidige stand van zaken in de psychologie van sportgedrag en prestatie. Dankzij oefeningen onder het motto Hoe sta je ervoor? aan het slot van ieder hoofdstuk, krijg je direct meer zelfbewustzijn. Je wordt voortdurend aangespoord om de suggesties en adviezen uit iedere les zo veel mogelijk toe te passen. Zo wordt het volgen van de opleiding Sportpsychologie ook echt een levende ervaring voor je. Tijdens de opleiding komen de volgende onderwerpen aan bod:
                         <ul>
@@ -42,7 +44,85 @@ In ieder sportmens vormen lichaam, geest en ziel ï¿½ï¿½n geheel. Om sportief suc
                         Heb je de opleiding Sportpsychologie / Mental Coach afgerond en wil je je verder ontwikkelen? De opleidingen van de divisie Coaching & Management zijn de perfecte vervolgopleidingen. Tevens is het mogelijk om je in de breedte te ontwikkelen door aanvullende opleidingen te volgen binnen de Fitness Academy.
                     </p>
                 </article>
-        ";
+                ";
+                break;
+            case 2:
+
+                $page .= "
+                <article>
+                    <h3>Fitness Management & Ondernemen</h3>
+                    <p>De Hogeschool Meppel opleiding Fitness Management & Ondernemen heeft zich de afgelopen jaren ontwikkeld tot de succesformule voor vele hedendaagse, succesvolle fitness managers en ondernemers. Ben jij werkzaam in de fitnessbranche of is het je ambitie aan de slag te gaan als ondernemer of manager binnen deze branche? Kies dan voor de opleiding Hogeschool Meppel Fitness Management & Ondernemen. Deze vijfdaagse business school is speciaal gericht op enthousiaste managers, potentiele managers en ondernemers die bereid zijn nieuwe en beproefde strategieën te gebruiken om hun dromen om te zetten in winstgevende werkelijkheid.</p>
+                    <p>
+                        Veel managers & ondernemers binnen de fitnessbranche kijken terug op de successen uit het verleden en kijken uit naar een succesvolle toekomst. De realiteit van vandaag is dat het succes uitblijft en wordt verschoven naar de toekomst. De opleiding Hogeschool Meppel Fitness Management & Ondernemen geeft je alle tools om vandaag nog een succes te maken van jouw fitnessonderneming.<br />
+                        Tijdens de opleiding ga je vijf weken intensief aan de slag. In 5 weken krijg je inzichtelijk wat op dit moment de handrem op het succes is en wat je kunt doen om dit te doorbreken. Je leert moderne en beproefde strategieën die vandaag nog zorgen voor succes. Deze opleiding geeft je de kennis en de vaardigheden om de werkelijkheid te veranderen en door te bouwen aan een succesvol (fitness) bedrijf.<br /><br />
+                        De opleiding Hogeschool Meppel Fitness Management & Ondernemen bestaat uit de volgende vijf modules:
+                        <ul>
+                        <li>Dag 1: Algemeen & Integraal management</li>
+                        <li>Dag 2: Sales management</li>
+                        <li>Dag 3: Marketing management</li>
+                        <li>Dag 4: Retentie management</li>
+                        <li>Dag 5: Inspirerend Leiderschap</li>
+                        </ul>
+                    </p>
+                    <strong>Doorstuderen?</strong>
+                    <p>
+                        Heb je de opleiding General Manager afgerond en wil je je verder ontwikkelen? De opleidingen van de divisie Coaching & Management zijn de perfecte vervolgopleidingen
+                    </p>
+                </article>
+                ";
+                break;
+            case 3:
+
+                $page .= "
+                <article>
+                    <h3>Jazz & Pop</h3>
+                    <p>
+                        Dit is Jazz & Pop bij ArtEZ in Zwolle:
+                        <ul>
+                            <li>Je eigen studie vormgeven door een breed aanbod aan keuzevakken en een nauwe samenwerking met het werkveld.</li>
+                            <li>Optimale ontwikkeling van zowel je creativiteit en muzikale persoonlijkheid als ambachtelijke vaardigheden op je instrument.</li>
+                            <li>Keuze uit 11 hoofdvakken.</li>
+                            <li>Begeleiding door gerenommeerde docenten en gastdocenten.</li>
+                            <li>Praktijkervaring opdoen en netwerk opbouwen tijdens projecten, festivals en concerten.</li>
+                        </ul>
+
+                        <br />
+                        Op de Hogeschool Meppel bieden wij elf verschillende hoofdvakken aan:
+                        <ul>
+                            <li>Basgitaar</li>
+                            <li>Contrabas</li>
+                            <li>Drums</li>
+                            <li>Gitaar</li>
+                            <li>Hammond</li>
+                            <li>Klarinet</li>
+                            <li>Piano en toetsen</li>
+                            <li>Saxofoon</li>
+                            <li>Trombone</li>
+                            <li>Trompet</li>
+                            <li>Zang</li>
+                        </ul>
+                        Na je studie ben je een veelzijdig musicus, die uitstekend op de huidige, veelzijdige beroepspraktijk is voorbereid. Je kunt ook doorstromen naar de master.
+                    </p>
+                </article>
+                ";
+                break;
+        }
+        $page.= '
+            <hr>
+            <h3>Andere pagina\'s</h3>
+        ';
+    }
+    $page .= '
+        <strong>Sport en bewegen</strong>
+        <ul>
+            <li><a href="?page=educations&id=1">Sportpsychologie</a></li>
+            <li><a href="?page=educations&id=2">Fitness Management & Ondernemen</a></li>
+        </ul>
+        <strong>Muziek</strong>
+        <ul>
+            <li><a href="?page=educations&id=3">Jazz & Pop</a></li>
+        </ul>
+    ';
     return $page;
 }
 function ContactPage(){
