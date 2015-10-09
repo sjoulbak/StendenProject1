@@ -74,6 +74,10 @@
     <section class="top">
     </section>
     <section class="mid">
+      <img src="./images/circle.png"  height="100" width="100">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+        Aenean scelerisque magna nibh. Nam ligula lectus,<br>
+        <h4>-dasdsad</h4>
     </section>
     <section class="bottom">
         <?php
