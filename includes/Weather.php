@@ -10,6 +10,7 @@ class Weather{
 
     private $url = "http://api.openweathermap.org/data/2.5/weather?q=";
     private $location = "";
+    private $apiKey = "714e4e703a5ce146a1fb3e8b0705743a";
     // units=metric zet temperatuur in graden celcius.
     private $urlParams = [
         "units" => "metric"
@@ -28,7 +29,7 @@ class Weather{
         foreach($this->urlParams as $key => $val){
             $urlParams .= "&$key=$val";
         }
-        $url = $this->url."{".urlencode($this->location)."}".$urlParams;
+        $url = $this->url."{".urlencode($this->location)."}".$urlParams."&APPID=".$this->apiKey;
 
         $data = file_get_contents($url);
         $data = json_decode($data);

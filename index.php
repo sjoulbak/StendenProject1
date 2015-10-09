@@ -1,4 +1,5 @@
 <?php
+  session_start();
   // Naam van de website
   $businessName = "Hogeschool Meppel";
 
@@ -6,8 +7,8 @@
   require_once("includes/Feed.php");
   // include Weather.php (voor het verwerken van het weer)
   require_once("includes/Weather.php");
-  // include Routing.php (voor het verwerken van de urls)
-  require_once("includes/Routing.php");
+  // include Language.php (voor het verwerken van de urls)
+  require_once("includes/Language.php");
 
   // Nieuwe feed
   $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=nl_nl&topic=h&output=rss");
@@ -44,7 +45,7 @@
     $sunrise = new DateTime();
     $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
     $sunrise->setTimestamp($w->sys->sunrise);
-    
+
     echo "<p>";
     echo "Graden: ".$w->main->temp." &deg; <br />";
     echo "Zonsopkomst: ".$sunrise->format('H:i:s');
