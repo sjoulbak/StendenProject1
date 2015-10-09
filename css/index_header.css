@@ -23,6 +23,7 @@ header{
 nav{
   float: right;
   margin-top: 35px;
+  margin-right: 50px;
 }
 nav ul{
 	list-style-type: none;
