@@ -71,7 +71,6 @@
   </header>
   <div class="container">
     <section class="top">
-      <div class="overlay"><h1>Hogeschool Meppel</h1></div>
     </section>
     <section class="mid">
       <img src="./images/circle.png"  height="100" width="100">
