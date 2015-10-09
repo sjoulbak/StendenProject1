@@ -12,7 +12,6 @@
 
   // Nieuwe weer
   $weather = new Weather();
-
     // Temperatuur en zonsopkomstt in Meppel
     $weather->setLocation("Meppel");
     $w = $weather->getWeather();
@@ -48,9 +47,15 @@
 </head>
 <body>
   <header>
-    <div id="lang">
-      <a href="<?php echo $langUrl; ?>lang=en"><img src="images/en.png" /></a>
-      <a href="<?php echo $langUrl; ?>lang=nl"><img src="images/nl.png" /></a>
+    <div class="lang">
+      <ul>
+        <li><a href="<?php echo $langUrl; ?>lang=en"><img src="images/en.png" /></a></li>
+        <li><a href="<?php echo $langUrl; ?>lang=nl"><img src="images/nl.png" /></a></li>
+        <?php
+          echo "<li>Graden: ".$w->main->temp." &deg;  </li>";
+          echo "<li>Zonsopkomst: ".$sunrise->format('H:i:s')."</li>";
+        ?>
+      </ul>
     </div>
     <nav>
       <ul>
@@ -60,14 +65,6 @@
         <li><a class="navhome" href="?page=contact">Contact</a></li>
       </ul>
     </nav>
-      <div class="temp">
-          <?php
-          echo "<p>";
-          echo "Graden: ".$w->main->temp." &deg; <br />";
-          echo "Zonsopkomst: ".$sunrise->format('H:i:s');
-          echo "</p>";
-          ?>
-      </div>
   </header>
   <div class="container">
         <?php
