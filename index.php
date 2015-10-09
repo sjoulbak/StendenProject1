@@ -71,9 +71,8 @@
   </header>
   <div class="container">
         <?php
-        $top = true;
-        $middle = true;
-        $page = homePage();
+        $top = false;
+        $middle = false;
         if(isset($_GET['page'])){
 
             switch($_GET['page']){
@@ -95,26 +94,23 @@
                         $page .= $val->description;
                         $page .= "</p>";
                     }
-
-
-                    $top = false;
-                    $middle = false;
                     break;
                 case "educations":
                     $page = educationsPage();
-                    $top = false;
-                    $middle = false;
                     break;
                 case "contact":
                     $page = contactPage();
-                    $top = false;
-                    $middle = false;
                     break;
                 default:
                     $page = homePage();
                     break;
             }
 
+        }else{
+
+            $top = true;
+            $middle = true;
+            $page = homePage();
         }
 
 
