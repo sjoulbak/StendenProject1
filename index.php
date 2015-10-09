@@ -19,6 +19,15 @@
     $sunrise = new DateTime();
     $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
     $sunrise->setTimestamp($w->sys->sunrise);
+
+    //var_dump($url);
+    $langUrl = "?";
+    foreach($_GET as $key => $val){
+        if($key != "lang"){
+            $langUrl .= $key."=".$val."&";
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +49,8 @@
 <body>
   <header>
     <div id="lang">
-      <a href="?lang=en"><img src="images/en.png" /></a>
-      <a href="?lang=nl"><img src="images/nl.png" /></a>
+      <a href="<?php echo $langUrl; ?>lang=en"><img src="images/en.png" /></a>
+      <a href="<?php echo $langUrl; ?>lang=nl"><img src="images/nl.png" /></a>
     </div>
     <h1><?php echo $businessName; ?></h1>
     <nav>
