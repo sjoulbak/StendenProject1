@@ -11,6 +11,7 @@ function homePage(){
                <div class="col-md-6"><img src="images/pic1.jpg" style="width: 100%;"/></div>
                <div class="col-md-6"><img src="images/pic2.jpg" style="width: 100%;"/></div>
              </div>';
+
     return $page;
 }
 function educationsPage(){
