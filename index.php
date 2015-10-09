@@ -34,15 +34,18 @@
 </head>
 <body>
   <header>
-      <h1 class="headerh1"><?php echo $businessName; ?></h1>
+    <div id="lang">
       <a href="?lang=en"><img src="images/en.png" /></a>
       <a href="?lang=nl"><img src="images/nl.png" /></a>
-      <nav>
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="index.php">Opleidingen</a></li>
-        </ul>
-      </nav>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="navhome" href="">Home</a></li>
+        <li><a class="navhome" href="">Opleidingen</a></li>
+        <li><a class="navhome" href="">Nieuws</a></li>
+        <li><a class="navhome" href="">Contact</a></li>
+      </ul>
+    </nav>
   </header>
   <div class="container">
     <section class="top">
