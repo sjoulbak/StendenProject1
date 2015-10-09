@@ -15,7 +15,7 @@ function homePage(){
 }
 
 function educationsPage(){
-    echo "<h1>Educations</h1>";
+    $page = "<h1>Educations</h1>";
     echo "
                 <article>
                     <h3>Sports Psychology</h3>
