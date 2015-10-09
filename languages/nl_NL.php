@@ -8,13 +8,9 @@
 
 function homePage(){
     $page = '<div class="row">
-               <div class="col-md-6"></div>
-               <div class="col-md-6"></div>
-             </div>
-             <div class="row">
-                <div class="col-md-6"><div>
-                <div class="col-md-6"></div>
-              </div>';
+               <div class="col-md-6"><img src="images/pic1.jpg" style="width: 100%;"/></div>
+               <div class="col-md-6"><img src="images/pic2.jpg" style="width: 100%;"/></div>
+             </div>';
     return $page;
 }
 function educationsPage(){
