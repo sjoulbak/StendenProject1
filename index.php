@@ -3,11 +3,11 @@
     $businessName = "Hogeschool Meppel";
 
     // include Feed.php (voor het verwerken van de feed)
-    require_once("Feed.php");
+    require_once("includes/Feed.php");
     // include Weather.php (voor het verwerken van het weer)
-    require_once("Weather.php");
+    require_once("includes/Weather.php");
     // include Routing.php (voor het verwerken van de urls)
-    require_once("Routing.php");
+    require_once("includes/Routing.php");
 
     // Nieuwe feed
     $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=nl_nl&topic=h&output=rss");
