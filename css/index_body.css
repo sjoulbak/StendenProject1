@@ -9,7 +9,7 @@
   color: white;
   text-align: center;
   padding-top: 50px;
-
+}
 .bottom {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -28,4 +28,7 @@
 .overlay h1 {
   color: white;
   margin-top: 0;
+}
+.col-md-6{
+  height: 300px;
 }
