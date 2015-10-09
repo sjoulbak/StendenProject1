@@ -6,12 +6,14 @@
  * Time: 09:33
  */
 function homePage(){
-    $page = "<h1>Home</h1>";
-    $page .= "
-                <article>
-                    Homepage
-                </article>
-        ";
+      $page = '<div class="row">
+               <div class="col-md-6"></div>
+               <div class="col-md-6"></div>
+             </div>
+             <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6"></div>
+              </div>';
     return $page;
 }
 

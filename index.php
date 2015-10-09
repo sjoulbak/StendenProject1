@@ -99,6 +99,8 @@
                     $page = contactPage();
                     break;
                 default:
+                    $top = true;
+                    $middle = true;
                     $page = homePage();
                     break;
             }
