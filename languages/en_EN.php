@@ -6,12 +6,13 @@
  * Time: 09:33
  */
 function homePage(){
-    echo "<h1>Home</h1>";
-    echo "
+    $page = "<h1>Home</h1>";
+    $page .= "
                 <article>
                     Homepage
                 </article>
-            ";
+        ";
+    return $page;
 }
 
 function educationsPage(){
