@@ -4,8 +4,11 @@
 }
 .mid {
   margin-top: 40px;
-  background: #000;
-  height: 230px;
+  background-image: url("../images/mid.jpg");
+  height: 280px;
+  color:white;
+  text-align: center;
+  padding-top: 20px;
 }
 .bottom {
   margin-top: 40px;
