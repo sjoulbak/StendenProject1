@@ -17,14 +17,17 @@ switch ($lang){
     case "nl":
         echo "PAGE NL";
         require_once("languages/nl_NL.php");
+        $feed = "nl_nl";
         break;
     case "en":
         echo "PAGE EN";
         require_once("languages/en_EN.php");
+        $feed = "en_en";
         break;
     default:
         echo "PAGE DEFAULT";
         require_once("languages/en_EN.php");
+        $feed = "en_en";
         break;
 }
 //var_dump($router->getRoutes());
