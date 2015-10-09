@@ -7,16 +7,17 @@
  */
 
 function homePage(){
-        echo "<h1>Home</h1>";
-        echo "
-                <article>
-                    Homepage
-                </article>
-            ";
+    $page = "<h1>Home</h1>";
+    $page .= "
+            <article>
+                Homepage
+            </article>
+        ";
+    return $page;
 }
 function educationsPage(){
-        echo "<h1>Opleidingen</h1>";
-        echo "
+    $page = "<h1>Opleidingen</h1>";
+    $page .= "
                 <article>
                     <h3>Sportpsychologie</h3>
                     <p>Wat je ook doet in de sport, de opleiding Sportpsychologie opent beslist je ogen voor de boeiende psychologische aspecten van sportgedrag. En dat kan erg nuttig zijn. Als je sporters coacht en je ze nog beter wilt begeleiden. Of voor jezelf, als je bijvoorbeeld aan fitness doet of hardloopt en net dat beetje extra wilt geven.
@@ -42,11 +43,12 @@ In ieder sportmens vormen lichaam, geest en ziel één geheel. Om sportief succes 
                         Heb je de opleiding Sportpsychologie / Mental Coach afgerond en wil je je verder ontwikkelen? De opleidingen van de divisie Coaching & Management zijn de perfecte vervolgopleidingen. Tevens is het mogelijk om je in de breedte te ontwikkelen door aanvullende opleidingen te volgen binnen de Fitness Academy.
                     </p>
                 </article>
-            ";
+        ";
+    return $page;
 }
 function ContactPage(){
-        echo "<h1>Contact</h1>";
-        echo "
+    $page =  "<h1>Contact</h1>";
+    $page .= "
                 <article>
 
                     <h3>Stenden Hogeschool Meppel</h3>
@@ -62,5 +64,6 @@ function ContactPage(){
                     <br />
                     +31 (0)522 853 400
                 </article>
-            ";
+        ";
+    return $page;
 }

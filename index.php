@@ -80,6 +80,8 @@
     </section>
     <section class="bottom">
         <?php
+        $top = false;
+        $middle = false;
         if(isset($_GET['page'])){
 
             switch($_GET['page']){
@@ -90,36 +92,59 @@
 
                     // Feed channel laten zien
                     $channel = $feed->getChannel();
-                    echo "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
-                    echo "<br />";
+                    $page = "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
+                    $page .=  "<br />";
 
                     // Feed items laten zien
                     foreach($feed->getItems() as $val){
-                        echo "<p>";
-                        echo $val->title;
-                        echo "<br />";
-                        echo $val->description;
-                        echo "</p>";
+                        $page .= "<p>";
+                        $page .= $val->title;
+                        $page .= "<br />";
+                        $page .= $val->description;
+                        $page .= "</p>";
                     }
-
-
                     break;
                 case "educations":
-                    educationsPage();
+                    $page = educationsPage();
                     break;
                 case "contact":
-                    contactPage();
+                    $page = contactPage();
                     break;
                 default:
-                    homePage();
+                    $page = homePage();
                     break;
             }
 
+        }else{
+
+            $top = true;
+            $middle = true;
+            $page = homePage();
         }
 
 
 
+        if($top == true){
+            echo '
 
+              <section class="top">
+              </section>
+            ';
+        }
+        if($middle == true){
+            echo '
+              <section class="mid">
+                  <img src="./images/circle.png"  height="100" width="100">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                      Aenean scelerisque magna nibh. Nam ligula lectus,<br>
+                  <h4>-dasdsad</h4>
+              </section>
+            ';
+        }
+        ?>
+    <section class="bottom">
+        <?php
+            echo $page;
         ?>
     </section>
   </div>

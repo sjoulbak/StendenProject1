@@ -15,8 +15,8 @@ function homePage(){
 }
 
 function educationsPage(){
-    echo "<h1>Educations</h1>";
-    echo "
+    $page = "<h1>Educations</h1>";
+    $page .= "
                 <article>
                     <h3>Sports Psychology</h3>
                     <p>What you do in the sport, the Sport Psychology definitely opens your eyes to the interesting psychological aspects of sport behavior. And that can be very useful. If you coach athletes and get them to guide even better. Or for yourself, if you for instance do fitness or running, and want to give that little bit extra.
@@ -49,11 +49,12 @@ Training Sports psychology is a home study and consists of ten modules. The cour
 
                    </p>
                 </article>
-            ";
+        ";
+    return $page;
 }
 function ContactPage(){
-    echo "<h1>Contact</h1>";
-    echo "
+    $page = "<h1>Contact</h1>";
+    $page .= "
                 <article>
 
                     <h3>Stenden Hogeschool Meppel</h3>
@@ -69,5 +70,6 @@ function ContactPage(){
                     <br />
                     +31 (0)522 853 400
                 </article>
-            ";
+        ";
+    return $page;
 }
