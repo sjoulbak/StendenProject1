@@ -22,6 +22,7 @@
   <title><?php echo $businessName; ?></title>
   <!-- Bootstrap -->
    <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/index_header.css" rel="stylesheet">
 
    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,16 +33,17 @@
 </head>
 <body>
   <header>
-    <div class="container">
+      <h1 class="headerh1"><?php echo $businessName; ?></h1>
+      <a href="?lang=en"><img src="images/en.png" /></a>
+      <a href="?lang=nl"><img src="images/nl.png" /></a>
       <nav>
-
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php">Opleidingen</a></li>
+        </ul>
       </nav>
-    </div>
   </header>
   <div class="container">
-    <h1><?php echo $businessName; ?></h1>
-    <a href="?lang=en"><img src="images/en.png" /></a>
-    <a href="?lang=nl"><img src="images/nl.png" /></a>
     <?php
     // Feed channel laten zien
     $channel = $feed->getChannel();
