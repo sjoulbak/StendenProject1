@@ -6,10 +6,10 @@
  * Time: 09:33
  */
 
-//        Dutch language file
 
+//        Nederlandse vertaling
 
-// Home page
+// Home pagina
 function homePage(){
     $page = '
         <div class="row">
@@ -25,13 +25,14 @@ function homePage(){
 }
 
 
-// Educations page
+// Opleidingen pagina
+
 function educationsPage(){
     $page = "<h1>Opleidingen</h1>";
 
     if(isset($_GET['id'])){
         switch($_GET['id']){
-            case 1:
+            case 1: // Opleiding 1
                 $page .= "
                 <article>
                     <h3>Sportpsychologie</h3>
@@ -58,7 +59,7 @@ function educationsPage(){
                 </article>
                 ";
                 break;
-            case 2:
+            case 2: // Opleiding 2
 
                 $page .= "
                 <article>
@@ -83,7 +84,7 @@ function educationsPage(){
                 </article>
                 ";
                 break;
-            case 3:
+            case 3: // Opleiding 3
 
                 $page .= "
                 <article>
@@ -124,6 +125,7 @@ function educationsPage(){
             <h3>Andere pagina\'s</h3>
         ';
     }
+    // Kleine menu
     $page .= '
         <strong>Sport en bewegen</strong>
         <ul>
@@ -138,7 +140,7 @@ function educationsPage(){
     return $page;
 }
 
-    // Contact page
+// Contact pagina
 function ContactPage(){
     $page =  "<h1>Contact</h1>";
     $page .= "
@@ -182,7 +184,7 @@ function ContactPage(){
                 </form>
             </article>
         ";
-    // Handling contact form
+    // Verwerkt de contact gegevens
     if(isset($_POST['contact'])){
         $page .= '
                     <script type="application/javascript">

@@ -7,9 +7,9 @@
  */
 
 
-//        English language file
+//        Engelse vertaling
 
-// Home page
+// Home pagina
 function homePage(){
     $page = '
         <div class="row">
@@ -20,16 +20,17 @@ function homePage(){
                 <img src="images/pic2.jpg" style="width: 100%;"/>
             </div>
         </div>';
+
     return $page;
 }
 
-// Educations page
+// Opleidingen pagina
 function educationsPage(){
     $page = "<h1>Educations</h1>";
 
     if(isset($_GET['id'])){
         switch($_GET['id']){
-            case 1:
+            case 1: // Opleiding 1
                 $page .= "
                     <article>
                         <h3>Sports Psychology</h3>
@@ -62,7 +63,7 @@ function educationsPage(){
                 ";
                 break;
 
-            case 2:
+            case 2: // Opleiding 2
 
                 $page .= "
                 <article>
@@ -90,7 +91,7 @@ function educationsPage(){
                 ";
                 break;
 
-            case 3:
+            case 3: // Opleiding 3
 
                 $page .= "
                 <article>
@@ -131,6 +132,7 @@ function educationsPage(){
         ';
     }
 
+    // Kleine menu
     $page .= '
         <strong>Sports</strong>
         <ul>
@@ -145,7 +147,7 @@ function educationsPage(){
     return $page;
 }
 
-// Contact page
+// Contact pagina
 function ContactPage(){
     $page = "<h1>Contact</h1>";
     $page .= "
@@ -191,7 +193,7 @@ function ContactPage(){
             </article>
         ";
 
-    // Handling contact form
+    // Verwerkt de contact gegevens
     if(isset($_POST['contact'])){
         $page .= '
                 <script type="application/javascript">
