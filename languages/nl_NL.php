@@ -143,6 +143,14 @@ function ContactPage(){
                     <br />
                     +31 (0)522 853 400
                 </article>
+                <article>
+<form>
+    <label for='name'>Naam</label><input type='text' name='name' id='name'/>
+    <label for='mail'>Naam</label><input type='text' name='mail' id='mail'/>
+    <label for='subject'>Onderwerp</label><input type='text' name='subject' id='subject'/>
+    <label for='message'>Bericht</label><textarea name='message' id='message'></textarea>
+</form>
+                </article>
         ";
     return $page;
 }

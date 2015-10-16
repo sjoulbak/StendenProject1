@@ -37,6 +37,7 @@
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/index_body.css" rel="stylesheet">
    <link href="css/index_header.css" rel="stylesheet">
+   <link href="css/contact.css" rel="stylesheet">
 
    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,7 +68,7 @@
     </nav>
   </header>
   <div class="container">
-        <?php
+     <?php
         $top = false;
         $middle = false;
         if(isset($_GET['page'])){
@@ -131,7 +132,7 @@
               </section>
             ';
         }
-        ?>
+     ?>
     <section class="bottom">
         <?php
             echo $page;
