@@ -6,6 +6,10 @@
  * Time: 09:33
  */
 
+//        Dutch language file
+
+
+// Home page
 function homePage(){
     $page = '<div class="row">
                <div class="col-md-6"><img src="images/pic1.jpg" style="width: 100%;"/></div>
@@ -14,6 +18,9 @@ function homePage(){
 
     return $page;
 }
+
+
+// Educations page
 function educationsPage(){
     $page = "<h1>Opleidingen</h1>";
 
@@ -125,6 +132,8 @@ function educationsPage(){
     ';
     return $page;
 }
+
+    // Contact page
 function ContactPage(){
     $page =  "<h1>Contact</h1>";
     $page .= "
@@ -194,11 +203,11 @@ function ContactPage(){
             $error++;
         }
         $page .= '
-                document.getElementById("input_name").value = "'.$_POST['name'].'";
-                document.getElementById("input_mail").value = "'.$_POST['mail'].'";
-                document.getElementById("input_subject").value = "'.$_POST['subject'].'";
-                document.getElementById("input_message").innerHTML = "'.$_POST['message'].'";
-            ';
+            document.getElementById("input_name").value = "'.$_POST['name'].'";
+            document.getElementById("input_mail").value = "'.$_POST['mail'].'";
+            document.getElementById("input_subject").value = "'.$_POST['subject'].'";
+            document.getElementById("input_message").innerHTML = "'.$_POST['message'].'";
+        ';
         if($error == 0){
             $page .= '
 
@@ -210,8 +219,8 @@ function ContactPage(){
             ';
         }
         $page .= '
-                    </script>
-                ';
+                </script>
+            ';
 
     }
     return $page;
