@@ -39,16 +39,16 @@ function educationsPage(){
                     <p>
                         De opleiding Sportpsychologie is een thuisstudie en bestaat uit tien modules. Het lesmateriaal bestaat uit veel praktische oefeningen, onderzoek en informatie uit casestudies. Voor de opleiding Sportpsychologie is geen speciale vooropleiding nodig. Je krijgt een volledig overzicht van de huidige stand van zaken in de psychologie van sportgedrag en prestatie. Dankzij oefeningen onder het motto Hoe sta je ervoor? aan het slot van ieder hoofdstuk, krijg je direct meer zelfbewustzijn. Je wordt voortdurend aangespoord om de suggesties en adviezen uit iedere les zo veel mogelijk toe te passen. Zo wordt het volgen van de opleiding Sportpsychologie ook echt een levende ervaring voor je. Tijdens de opleiding komen de volgende onderwerpen aan bod:
                         <ul>
-                        <li>De discipline doorgelicht</li>
-                        <li>Een gezonde geest in een gezond lichaam</li>
-                        <li>Psychologie en sportprestatie</li>
-                        <li>Jeugd(top)sport</li>
-                        <li>Vaardigheid en topprestatie</li>
-                        <li>Het profiel van de kampioen</li>
-                        <li>De kunst van het coachen</li>
-                        <li>Psychological Skills Training (PST)</li>
-                        <li>De (top)sportwereld</li>
-                        <li>Het mental trainingprogramma</li>
+                            <li>De discipline doorgelicht</li>
+                            <li>Een gezonde geest in een gezond lichaam</li>
+                            <li>Psychologie en sportprestatie</li>
+                            <li>Jeugd(top)sport</li>
+                            <li>Vaardigheid en topprestatie</li>
+                            <li>Het profiel van de kampioen</li>
+                            <li>De kunst van het coachen</li>
+                            <li>Psychological Skills Training (PST)</li>
+                            <li>De (top)sportwereld</li>
+                            <li>Het mental trainingprogramma</li>
                         </ul>
                     </p>
                     <strong>Doorstuderen?</strong>
@@ -69,11 +69,11 @@ function educationsPage(){
                         Tijdens de opleiding ga je vijf weken intensief aan de slag. In 5 weken krijg je inzichtelijk wat op dit moment de handrem op het succes is en wat je kunt doen om dit te doorbreken. Je leert moderne en beproefde strategie�n die vandaag nog zorgen voor succes. Deze opleiding geeft je de kennis en de vaardigheden om de werkelijkheid te veranderen en door te bouwen aan een succesvol (fitness) bedrijf.<br /><br />
                         De opleiding Hogeschool Meppel Fitness Management & Ondernemen bestaat uit de volgende vijf modules:
                         <ul>
-                        <li>Dag 1: Algemeen & Integraal management</li>
-                        <li>Dag 2: Sales management</li>
-                        <li>Dag 3: Marketing management</li>
-                        <li>Dag 4: Retentie management</li>
-                        <li>Dag 5: Inspirerend Leiderschap</li>
+                            <li>Dag 1: Algemeen & Integraal management</li>
+                            <li>Dag 2: Sales management</li>
+                            <li>Dag 3: Marketing management</li>
+                            <li>Dag 4: Retentie management</li>
+                            <li>Dag 5: Inspirerend Leiderschap</li>
                         </ul>
                     </p>
                     <strong>Doorstuderen?</strong>

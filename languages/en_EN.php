@@ -98,13 +98,13 @@ function educationsPage(){
                     <p>
                         This is Jazz & Pop at Hoogeschool Meppel
                         <ul>
-                        <li>Possibility to design your own study through a wide range of electives and close cooperation with the industry</li>
-                        <li>Optimal development of your creativity, musical personality and artistry with your instrument</li>
-                        <li>Choice of 11 majors</li>
-                        <li>Supervision by prominent lecturers and masterclasses with national and international guest lecturers</li>
-                        <li>Acquisition of practical experience during projects, festivals and concerts
-Following your studies, you will be a versatile and distinctive musician and will be well prepared for the world of contemporary professional practice. You can also continue your studies with a Master’s programme.
-</li>
+                            <li>Possibility to design your own study through a wide range of electives and close cooperation with the industry</li>
+                            <li>Optimal development of your creativity, musical personality and artistry with your instrument</li>
+                            <li>Choice of 11 majors</li>
+                            <li>Supervision by prominent lecturers and masterclasses with national and international guest lecturers</li>
+                            <li>Acquisition of practical experience during projects, festivals and concerts
+                                Following your studies, you will be a versatile and distinctive musician and will be well prepared for the world of contemporary professional practice. You can also continue your studies with a Master’s programme.
+                            </li>
                         </ul>
                         <strong>Majors</strong>
                         <ul>

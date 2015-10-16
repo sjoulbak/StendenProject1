@@ -12,7 +12,9 @@
         </a>
       </li>
       <?php
+        // Haalt aantal graden op
         echo "<li>Graden: ".$w->main->temp." &deg;  </li>";
+        // Haalt de zon opkomst op.
         echo "<li>Zonsopkomst: ".$sunrise->format('H:i:s')."</li>";
       ?>
     </ul>
