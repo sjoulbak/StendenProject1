@@ -191,6 +191,7 @@ function ContactPage(){
             </article>
         ";
 
+    // Handling contact form
     if(isset($_POST['contact'])){
         $page .= '
                 <script type="application/javascript">
