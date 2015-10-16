@@ -12,21 +12,21 @@
 
   // Nieuwe weer
   $weather = new Weather();
-    // Temperatuur en zonsopkomstt in Meppel
-    $weather->setLocation("Meppel");
-    $w = $weather->getWeather();
-    $sunrise = new DateTime();
-    $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
-    $sunrise->setTimestamp($w->sys->sunrise);
 
-    //var_dump($url);
-    $langUrl = "?";
-    foreach($_GET as $key => $val){
-        if($key != "lang"){
-            $langUrl .= $key."=".$val."&";
-        }
+  // Temperatuur en zonsopkomstt in Meppel
+  $weather->setLocation("Meppel");
+  $w = $weather->getWeather();
+  $sunrise = new DateTime();
+  $sunrise->setTimezone(new DateTimeZone('europe/amsterdam'));
+  $sunrise->setTimestamp($w->sys->sunrise);
+
+  //var_dump($url);
+  $langUrl = "?";
+  foreach($_GET as $key => $val) {
+    if($key != "lang") {
+      $langUrl .= $key."=".$val."&";
     }
-
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,6 @@
    <link href="css/index_body.css" rel="stylesheet">
    <link href="css/index_header.css" rel="stylesheet">
    <link href="css/contact.css" rel="stylesheet">
-
    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
@@ -68,75 +67,63 @@
     </nav>
   </header>
   <div class="container">
-     <?php
-        $top = false;
-        $middle = false;
-        if(isset($_GET['page'])){
+    <?php
+      $top = false;
+      $middle = false;
+      if(isset($_GET['page'])) {
+        switch($_GET['page']) {
+          case "news":
+            // Nieuwe feed
+            $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=".$feed."&topic=h&output=rss");
 
-            switch($_GET['page']){
-                case "news":
+            // Feed channel laten zien
+            $channel = $feed->getChannel();
+            $page = "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
+            $page .=  "<br />";
 
-                    // Nieuwe feed
-                    $feed = new Feed("https://news.google.com/news?cf=all&hl=nl_nl&pz=1&ned=".$feed."&topic=h&output=rss");
-
-                    // Feed channel laten zien
-                    $channel = $feed->getChannel();
-                    $page = "<h2><a href='".$channel->link."' target='_blank'>".$channel->title."</a></h2>";
-                    $page .=  "<br />";
-
-                    // Feed items laten zien
-                    foreach($feed->getItems() as $val){
-                        $page .= "<p>";
-                        $page .= $val->title;
-                        $page .= "<br />";
-                        $page .= $val->description;
-                        $page .= "</p>";
-                    }
-                    break;
-                case "educations":
-                    $page = educationsPage();
-                    break;
-                case "contact":
-                    $page = contactPage();
-                    break;
-                default:
-                    $top = true;
-                    $middle = true;
-                    $page = homePage();
-                    break;
+            // Feed items laten zien
+            foreach($feed->getItems() as $val) {
+              $page .= "<p>";
+              $page .= $val->title;
+              $page .= "<br />";
+              $page .= $val->description;
+              $page .= "</p>";
             }
-
-        }else{
-
+            break;
+          case "educations":
+            $page = educationsPage();
+            break;
+          case "contact":
+            $page = contactPage();
+            break;
+          default:
             $top = true;
             $middle = true;
             $page = homePage();
+            break;
         }
+      } else {
+        $top = true;
+        $middle = true;
+        $page = homePage();
+      }
 
-
-
-        if($top == true){
-            echo '
-
-              <section class="top">
-              </section>
-            ';
-        }
-        if($middle == true){
-            echo '
-              <section class="mid">
-                  <img src="./images/circle.png"  height="100" width="100">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                      Aenean scelerisque magna nibh. Nam ligula lectus,<br>
-                  <h4>-dasdsad</h4>
-              </section>
-            ';
-        }
-     ?>
+      if($top == true){
+        echo '<section class="top"></section>';
+      }
+      if($middle == true){
+        echo '<section class="mid">
+                <img src="./images/circle.png"  height="100" width="100"></img>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Aenean scelerisque magna nibh. Nam ligula lectus,</p>
+                <h4>-dasdsad</h4>
+              </section>';
+      }
+    ?>
     <section class="bottom">
-        <?php
-            echo $page;
-        ?>
+      <?php
+        echo $page;
+      ?>
     </section>
   </div>
   <footer>
