@@ -140,30 +140,92 @@ Following your studies, you will be a versatile and distinctive musician and wil
 function ContactPage(){
     $page = "<h1>Contact</h1>";
     $page .= "
-                <article>
+        <article>
 
-                    <h3>Stenden Hogeschool Meppel</h3>
-                    <strong>Visitaddress</strong><br />
-                    Van der Duyn van Maasdamstraat 1<br />
-                    7942 AT Meppel<br />
-                    <br />
-                    <strong>Postaddress</strong><br />
-                    Van der Duyn van Maasdamstraat 1<br />
-                    7942 AT Meppel<br />
-                    <br />
-                    meppel@stenden.com
-                    <br />
-                    +31 (0)522 853 400
-                </article>
-                <article>
-                    <form action='#' method='post'>
-                        <label for='name'>Name</label><input type='text' name='name' id='name'/><br />
-                        <label for='mail'>Mail</label><input type='text' name='mail' id='mail'/><br />
-                        <label for='subject'>Subject</label><input type='text' name='subject' id='subject'/><br />
-                        <label for='message'>Message</label><textarea name='message' id='message'></textarea><br />
-                        <label></label><input type='submit' name='contact' value='Send'/>
-                    </form>
-                </article>
+            <h3>Stenden Hogeschool Meppel</h3>
+            <strong>Visitaddress</strong><br />
+            Van der Duyn van Maasdamstraat 1<br />
+            7942 AT Meppel<br />
+            <br />
+            <strong>Postaddress</strong><br />
+            Van der Duyn van Maasdamstraat 1<br />
+            7942 AT Meppel<br />
+            <br />
+            meppel@stenden.com
+            <br />
+            +31 (0)522 853 400
+        </article>
+        <article>
+            <article id='formulier'>
+                <form action='#formulier' method='post'>
+                    <div id='name' class='input-block'>
+                        <label for='input_name'>Name</label>
+                        <input type='text' name='name' id='input_name'/>
+                    </div>
+                    <div id='mail' class='input-block'>
+                        <label for='input_mail'>Mail</label>
+                        <input type='text' name='mail' id='input_mail'/>
+                    </div>
+                    <div id='subject' class='input-block'>
+                        <label for='input_subject'>Subject</label>
+                        <input type='text' name='subject' id='input_subject'/>
+                    </div>
+                    <div id='message' class='input-block'>
+                        <label for='input_message'>Message</label>
+                        <textarea name='message' id='input_message'></textarea>
+                    </div>
+                    <div class='input-block'>
+                        <label></label>
+                        <input type='submit' name='contact' id='send' value='Send'/>
+                    </div>
+                </form>
+            </article>
         ";
+
+    if(isset($_POST['contact'])){
+        $page .= '
+                <script type="application/javascript">
+            ';
+        $error = 0;
+        if(strlen($_POST['name']) < 2){
+            $page .= generateJavascriptErrors("name", "Name is not long enough.");
+            $error++;
+        }
+        if(strlen($_POST['mail']) < 5){
+            $page .= generateJavascriptErrors("mail", "Mail is not long enough.");
+            $error++;
+        }elseif(!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+            $page .= generateJavascriptErrors("mail", "Mail is not right.");
+            $error++;
+        }
+        if(strlen($_POST['subject']) < 2){
+            $page .= generateJavascriptErrors("subject", "Subject is not long enough.");
+            $error++;
+        }
+        if(strlen($_POST['message']) < 5){
+            $page .= generateJavascriptErrors("message", "Message is not long enough.");
+            $error++;
+        }
+        $page .= '
+                document.getElementById("input_name").value = "'.$_POST['name'].'";
+                document.getElementById("input_mail").value = "'.$_POST['mail'].'";
+                document.getElementById("input_subject").value = "'.$_POST['subject'].'";
+                document.getElementById("input_message").innerHTML = "'.$_POST['message'].'";
+            ';
+        if($error == 0){
+            $page .= '
+
+                document.getElementById("input_name").setAttribute("disabled", "true");
+                document.getElementById("input_mail").setAttribute("disabled", "true");
+                document.getElementById("input_subject").setAttribute("disabled", "true");
+                document.getElementById("input_message").setAttribute("disabled", "true");
+                document.getElementById("send").setAttribute("disabled", "true");
+            ';
+        }
+        $page .= '
+                    </script>
+                ';
+
+    }
     return $page;
 }
