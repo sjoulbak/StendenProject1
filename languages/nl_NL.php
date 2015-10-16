@@ -128,29 +128,91 @@ function educationsPage(){
 function ContactPage(){
     $page =  "<h1>Contact</h1>";
     $page .= "
-                <article>
+            <article>
 
-                    <h3>Stenden Hogeschool Meppel</h3>
-                    <strong>Bezoekadres</strong><br />
-                    Van der Duyn van Maasdamstraat 1<br />
-                    7942 AT Meppel<br />
-                    <br />
-                    <strong>Postadres</strong><br />
-                    Van der Duyn van Maasdamstraat 1<br />
-                    7942 AT Meppel<br />
-                    <br />
-                    meppel@stenden.com
-                    <br />
-                    +31 (0)522 853 400
-                </article>
-                <article>
-<form>
-    <label for='name'>Naam</label><input type='text' name='name' id='name'/>
-    <label for='mail'>Naam</label><input type='text' name='mail' id='mail'/>
-    <label for='subject'>Onderwerp</label><input type='text' name='subject' id='subject'/>
-    <label for='message'>Bericht</label><textarea name='message' id='message'></textarea>
-</form>
-                </article>
+                <h3>Stenden Hogeschool Meppel</h3>
+                <strong>Bezoekadres</strong><br />
+                Van der Duyn van Maasdamstraat 1<br />
+                7942 AT Meppel<br />
+                <br />
+                <strong>Postadres</strong><br />
+                Van der Duyn van Maasdamstraat 1<br />
+                7942 AT Meppel<br />
+                <br />
+                meppel@stenden.com
+                <br />
+                +31 (0)522 853 400
+            </article>
+            <article id='formulier'>
+                <form action='#formulier' method='post'>
+                    <div id='name' class='input-block'>
+                        <label for='input_name'>Naam</label>
+                        <input type='text' name='name' id='input_name'/>
+                    </div>
+                    <div id='mail' class='input-block'>
+                        <label for='input_mail'>Email</label>
+                        <input type='text' name='mail' id='input_mail'/>
+                    </div>
+                    <div id='subject' class='input-block'>
+                        <label for='input_subject'>Onderwerp</label>
+                        <input type='text' name='subject' id='input_subject'/>
+                    </div>
+                    <div id='message' class='input-block'>
+                        <label for='input_message'>Bericht</label>
+                        <textarea name='message' id='input_message'></textarea>
+                    </div>
+                    <div class='input-block'>
+                        <label></label>
+                        <input type='submit' name='contact' id='send' value='Verstuur'/>
+                    </div>
+                </form>
+            </article>
         ";
+
+    if(isset($_POST['contact'])){
+        $page .= '
+                    <script type="application/javascript">
+                ';
+        $error = 0;
+        if(strlen($_POST['name']) < 2){
+            $page .= generateJavascriptErrors("name", "Naam is niet lang genoeg");
+            $error++;
+        }
+        if(strlen($_POST['mail']) < 5){
+            $page .= generateJavascriptErrors("mail", "Email is niet lang genoeg.");
+            $error++;
+        }elseif(!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+            $page .= generateJavascriptErrors("mail", "Email is niet juist.");
+            $error++;
+        }
+        if(strlen($_POST['subject']) < 2){
+            $page .= generateJavascriptErrors("subject", "Onderwerp is niet lang genoeg.");
+            $error++;
+        }
+        if(strlen($_POST['message']) < 5){
+            $page .= generateJavascriptErrors("message", "Bericht is niet lang genoeg.");
+            $error++;
+        }
+        $page .= '
+                document.getElementById("input_name").value = "'.$_POST['name'].'";
+                document.getElementById("input_mail").value = "'.$_POST['mail'].'";
+                document.getElementById("input_subject").value = "'.$_POST['subject'].'";
+                document.getElementById("input_message").innerHTML = "'.$_POST['message'].'";
+            ';
+        if($error == 0){
+            $page .= '
+
+                document.getElementById("input_name").setAttribute("disabled", "true");
+                document.getElementById("input_mail").setAttribute("disabled", "true");
+                document.getElementById("input_subject").setAttribute("disabled", "true");
+                document.getElementById("input_message").setAttribute("disabled", "true");
+                document.getElementById("send").setAttribute("disabled", "true");
+            ';
+        }
+        $page .= '
+                    </script>
+                ';
+
+    }
     return $page;
 }

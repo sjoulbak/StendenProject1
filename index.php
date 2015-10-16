@@ -27,6 +27,26 @@
       $langUrl .= $key."=".$val."&";
     }
   }
+
+    function generateJavascriptErrors($id, $error){
+        $script = '
+
+            var error = document.createElement("span");
+                error.setAttribute("class", "error");
+                error.innerHTML = "'.$error.'";
+            document.getElementById("'.$id.'").appendChild(error);
+            if("'.$id.'" == "message"){
+                var textarea = document.getElementById("'.$id.'").querySelector("textarea");
+                    textarea.style.background = "#FF5555";
+            }else{
+                var input = document.getElementById("'.$id.'").querySelector("input");
+                    input.style.background = "#FF5555";
+            }
+
+        ';
+        return $script;
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

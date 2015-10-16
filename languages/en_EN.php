@@ -155,6 +155,15 @@ function ContactPage(){
                     <br />
                     +31 (0)522 853 400
                 </article>
+                <article>
+                    <form action='#' method='post'>
+                        <label for='name'>Name</label><input type='text' name='name' id='name'/><br />
+                        <label for='mail'>Mail</label><input type='text' name='mail' id='mail'/><br />
+                        <label for='subject'>Subject</label><input type='text' name='subject' id='subject'/><br />
+                        <label for='message'>Message</label><textarea name='message' id='message'></textarea><br />
+                        <label></label><input type='submit' name='contact' value='Send'/>
+                    </form>
+                </article>
         ";
     return $page;
 }
