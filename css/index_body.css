@@ -40,3 +40,20 @@
 .col-md-6{
   height: auto;
 }
+
+.button{
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: 280px;
+    width: 300px;
+    background-color: #3d3d3d;
+    appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 18px 24px;
+    text-align: center;
+    text-decoration: none;
+}

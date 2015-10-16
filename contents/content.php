@@ -41,7 +41,7 @@
     }
 
     if($top == true){
-      echo '<section class="top"></section>';
+      echo '<section class="top"><a href="https://app.studielink.nl/front-office/?brinCode=22EX" class="button">Direct aanmelden via Studielink</a></section>';
     }
     if($middle == true){
       echo '<section class="mid">
